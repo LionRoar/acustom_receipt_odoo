@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template id="template" xml:space="preserve">
+        <t t-name="acustom_receipt.OrderReceipt" t-inherit="point_of_sale.OrderReceipt" 
+        t-inherit-mode="extension">
+            <xpath expr="//div[hasclass('pos-receipt')]" position="replace">
+                <div class="pos-receipt">
+                    <ReceiptHeader data="props.data.headerData" />
+                    <OrderWidget lines="props.data.orderlines" t-slot-scope="scope">
+                        <t t-set="line" t-value="scope.line"/>
+                        <Orderline line="omit(scope.line, 'customerNote')" class="{ 'pe-none': true }">
+                        </Orderline>
+                    </OrderWidget>
+                    <div class="total">
+							<span>TOTAL</span>
+							<span class="total_price" t-esc="props.formatCurrency(props.data.amount_total)" ></span>
+					</div>
+                </div>
+            </xpath>
+        </t>
+    </template>

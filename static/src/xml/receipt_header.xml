@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template id="template" xml:space="preserve">
+        <t t-name="acustom_receipt.ReceiptHeader"  t-inherit="point_of_sale.ReceiptHeader" t-inherit-mode="extension">
+             <xpath expr="//div[hasclass('pos-receipt-contact')]" position="replace">
+                <div class="pos-receipt-contact">
+                    <div t-if="props.data.company.partner_id?.[1]" t-esc="props.data.company.partner_id[1]" />
+                </div>
+       </xpath>
+        </t>
+    </template>

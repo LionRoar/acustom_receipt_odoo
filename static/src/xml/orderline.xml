@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template id="template" xml:space="preserve">
+        <t  t-name="acustom_receipt.Orderline"
+            t-inherit="point_of_sale.Orderline"
+            t-inherit-mode="extension">
+             <xpath expr="//li[hasclass('orderline')]" position="replace">
+                    <li class="cart_item">
+						<span class="index" t-esc="line.qty"></span>
+                        <span class="index-x">x</span>
+						<span class="name" t-esc="line.productName"></span>
+						<span class="price">
+                            <t t-if="line.price === 'free'">
+                                Free
+                            </t>
+                            <t t-else="" t-esc="line.price"/>
+                        </span>
+					</li>
+       </xpath>
+        </t>
+    </template>

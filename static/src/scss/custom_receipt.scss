@@ -1,0 +1,35 @@
+.cart_item {
+    display: flex;
+    padding: 5px 0 !important;
+}
+.cart_item + .cart_item {
+    border-top: 2px dashed #ccc;
+}
+.cart_item .index {
+    margin-right: 8px;
+    width: 18px;
+    overflow: hidden;
+}
+.cart_item .index-x {
+    margin-right: 8px;
+    overflow: hidden;
+}
+.cart_item .name {
+    flex-grow: 1;
+}
+.cart_item .price {
+    color: crimson;
+    font-weight: bold;
+}
+
+.total {
+	padding: 12px 0;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-top: 2px solid darkorange;
+}
+
+.total_price {
+	float: right;
+	color: crimson;
+}
